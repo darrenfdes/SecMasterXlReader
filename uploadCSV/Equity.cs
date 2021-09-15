@@ -92,7 +92,7 @@ namespace uploadCSV
                 ADRUnderlyingTicker =  data[15];
                 ADRUnderlyingCurrency = data[16];
                 SharesPerADR = data[17];
-                IPODate = data[18];
+                IPODate = data[18].Equals("")? null : DateTime.Parse(data[18]).ToString("MM-dd-yyyy");
                 PricingCurrency = data[19];
                 SettleDays = Convert.ToInt32(data[20].Equals("") ? null : data[20]);
                 TotalOutStandingShares = Convert.ToDouble(data[21].Equals("") ? null : data[21]);
@@ -130,10 +130,10 @@ namespace uploadCSV
                 AskPrice = Convert.ToDouble(data[53].Equals("") ? null : data[53]);
                 BidPrice = Convert.ToDouble(data[54].Equals("") ? null : data[54]);
                 PERatio = Convert.ToDouble(data[55].Equals("") ? null : data[55]);
-                DividendDeclaredDate = data[56];
-                DividendExDate = data[57];
-                DividendRecordDate = data[58];
-                DividendPayDate =data[59];
+                DividendDeclaredDate = data[18].Equals("")? null : DateTime.Parse(data[18]).ToString("MM-dd-yyyy");
+                DividendExDate = data[18].Equals("")? null : DateTime.Parse(data[18]).ToString("MM-dd-yyyy");
+                DividendRecordDate = data[18].Equals("")? null : DateTime.Parse(data[18]).ToString("MM-dd-yyyy");
+                DividendPayDate =data[18].Equals("")? null : DateTime.Parse(data[18]).ToString("MM-dd-yyyy");
                 DividendAmount = Convert.ToDouble(data[60].Equals("") ? null : data[60]);
                 Frequency =data[61];
                 DividendType = data[62];
